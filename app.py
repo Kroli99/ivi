@@ -14,7 +14,7 @@ app.layout = dbc.Container([
     dbc.Row(dbc.Col(html.H1("Used Car Interactive Dashboard"), className="mb-2 text-center")),
     dbc.Row(dbc.Col(html.Img(src=app.get_asset_url('car_exchange.jpg'), style={'width': '100%', 'height': 'auto'}))),
     dbc.Row(dbc.Col(html.P([
-        "Welcome to the Used Car Interactive Dashboard. Dive deep into a comprehensive dataset of over 9,582 used car listings collected from the Indian market up to November 2024. This tool allows you to explore diverse vehicle attributes including brand, model, year of manufacture, mileage, and pricing. Adjust the filters to analyze trends, compare different segments, and make informed decisions based on detailed market insights. Whether you're a potential buyer, a car enthusiast, or a market analyst, this dashboard provides valuable perspectives on the dynamics of India's used car market.",
+        "Welcome to the Used Car Interactive Dashboard. Dive deep into a comprehensive dataset of over 9,582 used car listings collected from the Indian market up to November 2024. This tool allows you to explore diverse vehicle attributes including brand, model, year of manufacture, mileage, and pricing. Adjust the filters to analyze trends, compare different segments, and make informed decisions based on detailed market insights.",
         html.Br(),
         html.Br(),
         "For more details, visit the dataset on ",
