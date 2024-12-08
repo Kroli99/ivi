@@ -20,7 +20,7 @@ To run this project locally, follow these steps:
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/your-username/used-car-dashboard.git
+   git clone https://github.com/Kroli99/ivi.git
    cd used-car-dashboard
 
 2.	**Set up a Python virtual environment (optional but recommended):**
