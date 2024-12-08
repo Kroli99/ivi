@@ -5,7 +5,6 @@ from dash.dependencies import Input, Output
 import plotly.express as px
 import pandas as pd
 
-# Load your dataset
 df = pd.read_csv('data/cleaned.csv')
 
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
@@ -64,20 +63,16 @@ def update_graphs(selected_brands, selected_currency):
     if 'All' not in selected_brands and selected_brands:
         filtered_df = filtered_df[filtered_df['Brand'].isin(selected_brands)]
     
-    # Scatter plot for Price vs. Kilometers Driven
     fig_km = px.scatter(filtered_df, x='kmDriven', y=selected_currency, color='FuelType',
                         title='Price vs. Kilometers Driven', labels={'kmDriven': 'Kilometers Driven', selected_currency: 'Asking Price'})
 
-    # Bar plot for Average Price by Age
     avg_price_by_age = filtered_df.groupby('Age')[selected_currency].mean().reset_index()
     fig_age = px.bar(avg_price_by_age, x='Age', y=selected_currency, title='Average Price by Age of Car',
                      labels={selected_currency: 'Average Asking Price', 'Age': 'Age of Car'})
 
-    # Pie chart for Fuel Type Distribution
     fig_fuel_type = px.pie(filtered_df, names='FuelType', title='Distribution of Fuel Types',
                            color_discrete_sequence=px.colors.sequential.RdBu)
 
-    # Histogram for Model Year Distribution
     fig_model_year = px.histogram(filtered_df, x='Year', nbins=30, title='Distribution of Model Years',
                                   labels={'Year': 'Model Year'})
 
